@@ -1,0 +1,54 @@
+configuration:
+  log_level:
+    name: Naplózási szint
+    description: >-
+      Meghatározza a bővítmény naplózási szintjét.
+  external_hostname:
+    name: Külső Home Assistant hosztnév
+    description: >-
+      Állítsd be azt a domain nevet vagy aldomaint, amelyen keresztül
+      el szeretnéd érni a Home Assistantot.
+  tunnel_name:
+    name: Cloudflare alagút neve
+    description: >-
+      Meghatározza az alagút nevét, amely a Cloudflare peremkiszolgálója és
+      ez a szolgáltatás között jön létre. Az alapértelmezett érték
+      a legtöbb esetben megfelelő.
+  additional_hosts:
+    name: További hosztok
+    description: >-
+      További hosztok listája, amelyeket a Cloudflare Tunnel kiszolgál.
+  post_quantum:
+    name: Poszt-kvantum kriptográfia használata
+    description: >-
+      Engedélyezésével a tunnel poszt-kvantum kriptográfiát használ.
+      Figyelem: Ez csak a QUIC protokollt engedélyezi, ami bizonyos
+      esetekben problémát okozhat.
+  run_parameters:
+    name: Indítási paraméterek hozzáadása
+    description: >-
+      Lehetőség további indítási paraméterek megadására a Cloudflared számára.
+  catch_all_service:
+    name: Alapértelmezett (catch-all) szolgáltatás
+    description: >-
+      Olyan alapértelmezett szolgáltatás megadása, amely kiszolgál minden
+      nem külön beállított kérést.
+  nginx_proxy_manager:
+    name: Catch-All Nginx Proxy Manager engedélyezése
+    description: >-
+      Az alapértelmezett szolgáltatást a "Nginx-Proxy-Manager Community Add-Ons"
+      bővítményre állítja.
+  use_builtin_proxy:
+    name: Beépített Nginx proxy használata
+    description: >-
+      A kapcsolat a Home Assistant felé a beépített Nginx proxy-n keresztül
+      történik. (Megoldás az élő naplókkal kapcsolatos hibákra.)
+      Ez az opció alapértelmezetten engedélyezett.
+  tunnel_token:
+    name: Cloudflare alagút token
+    description: >-
+      Ha ez meg van adva, minden más beállítás figyelmen kívül marad.
+      Használd ezt az opciót, ha az alagutat a Cloudflare Dashboard-on
+      keresztül hoztad létre.
+network:
+  36500/tcp: Metrikák webes felülete (36500/tcp)
